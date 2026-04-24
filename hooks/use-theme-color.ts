@@ -1,4 +1,7 @@
 /**
+ * Hook untuk mengakses warna theme (light/dark mode).
+ * Mendukung override per-komponen via props.
+ *
  * Learn more about light and dark modes:
  * https://docs.expo.dev/guides/color-schemes/
  */
@@ -15,7 +18,12 @@ export function useThemeColor(
 
   if (colorFromProps) {
     return colorFromProps;
-  } else {
-    return Colors[theme][colorName];
   }
+
+  return Colors[theme][colorName];
+}
+
+export function useThemeColors() {
+  const theme = useColorScheme() ?? 'light';
+  return Colors[theme];
 }

@@ -1,53 +1,77 @@
 /**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
+ * ResepKita Design Token System
+ *
+ * Color Reference:
+ *   Primary: #DC2626 (warm red)
+ *   Secondary: #F87171 (light coral)
+ *   CTA/Accent: #CA8A04 (warm gold)
+ *   Background: #FEF2F2 (warm cream)
+ *   Text: #450A0A (deep brown-red)
  */
-
-import { Platform } from 'react-native';
-
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    text: "#3D1C11", // Deep warm brown — high contrast on cream
+    textSecondary: "#7C5A4A", // Medium brown
+    textMuted: "#A88979", // Warm muted brown
+    background: "#FDF8F5", // Warm off-white cream
+    backgroundSecondary: "#F5ECE5", // Slightly darker cream
+    card: "#FFFFFF",
+    cardBorder: "#EDE0D4", // Warm card border
+    tint: "#D94F30", // Warm terracotta (CTA/accent)
+    tintSoft: "#FDF0EB", // Very light terracotta
+    icon: "#7C5A4A",
+    tabIconDefault: "#B09486",
+    tabIconSelected: "#D94F30",
+    success: "#2D8A4E",
+    successSoft: "#E6F4EA",
+    danger: "#C62828",
+    dangerSoft: "#FEECEB",
+    separator: "#EDE0D4",
+    badge: "#F5ECE5",
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    text: "#F5ECE5", // Warm cream text
+    textSecondary: "#C4A99A", // Medium warm
+    textMuted: "#8B7365", // Muted warm brown
+    background: "#1A110D", // Very dark warm brown
+    backgroundSecondary: "#2A1D16", // Dark warm
+    card: "#2A1D16",
+    cardBorder: "#3D2D22", // Warm dark border
+    tint: "#F0845A", // Lighter terracotta for dark mode
+    tintSoft: "#2A1A14", // Very dark terracotta
+    icon: "#C4A99A",
+    tabIconDefault: "#8B7365",
+    tabIconSelected: "#F0845A",
+    success: "#4CAF50",
+    successSoft: "#1B3620",
+    danger: "#EF5350",
+    dangerSoft: "#3C1616",
+    separator: "#3D2D22",
+    badge: "#3D2D22",
   },
 };
 
-export const Fonts = Platform.select({
-  ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
-  },
-  default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
-  },
-  web: {
-    sans: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
-    serif: "Georgia, 'Times New Roman', serif",
-    rounded: "'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif",
-    mono: "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
-  },
-});
+export const Spacing = {
+  xs: 4,
+  sm: 8,
+  md: 12,
+  lg: 16,
+  xl: 20,
+  "2xl": 24,
+  "3xl": 32,
+  "4xl": 48,
+} as const;
+
+export const Radius = {
+  sm: 8,
+  md: 12,
+  lg: 16,
+  xl: 20,
+  full: 9999,
+} as const;
+
+export const Touch = {
+  minHeight: 48,
+  minWidth: 48,
+} as const;
