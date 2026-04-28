@@ -1,7 +1,7 @@
-import { Pressable, StyleSheet, View } from 'react-native';
-import { ThemedText } from '@/components/themed-text';
-import { useThemeColors } from '@/hooks/use-theme-color';
-import { Radius, Spacing, Touch } from '@/constants/theme';
+import { ThemedText } from "@/components/themed-text";
+import { Radius, Spacing, Touch } from "@/constants/theme";
+import { useThemeColors } from "@/hooks/use-theme-color";
+import { Pressable, StyleSheet, View } from "react-native";
 
 interface ErrorMessageProps {
   message?: string;
@@ -9,14 +9,13 @@ interface ErrorMessageProps {
 }
 
 export function ErrorMessage({
-  message = 'Gagal memuat data',
+  message = "Gagal memuat data",
   onRetry,
 }: ErrorMessageProps) {
   const colors = useThemeColors();
 
   return (
     <View style={styles.container}>
-      <ThemedText style={styles.emoji}>😔</ThemedText>
       <ThemedText style={[styles.message, { color: colors.textSecondary }]}>
         {message}
       </ThemedText>
@@ -41,9 +40,9 @@ export function ErrorMessage({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: Spacing['2xl'],
+    justifyContent: "center",
+    alignItems: "center",
+    padding: Spacing["2xl"],
   },
   emoji: {
     fontSize: 56,
@@ -51,23 +50,23 @@ const styles = StyleSheet.create({
   },
   message: {
     fontSize: 16,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: Spacing.xl,
     lineHeight: 24,
   },
   retryButton: {
-    paddingHorizontal: Spacing['3xl'],
+    paddingHorizontal: Spacing["3xl"],
     paddingVertical: Spacing.md,
     borderRadius: Radius.md,
     minHeight: Touch.minHeight,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   retryPressed: {
     opacity: 0.8,
   },
   retryText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 15,
-    fontWeight: '600',
+    fontWeight: "600",
   },
 });

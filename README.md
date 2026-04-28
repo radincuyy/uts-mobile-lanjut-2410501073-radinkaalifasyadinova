@@ -55,15 +55,15 @@ Scan QR code menggunakan **Expo Go** di Android/iOS.
 
 | Screen       | Preview                               |
 | ------------ | ------------------------------------- |
-| Home         | ![Home](screenshots/home.png)         |
-| Detail Resep | ![Detail](screenshots/detail.png)     |
-| Favorit      | ![Favorit](screenshots/favorites.png) |
-| Search       | ![Search](screenshots/search.png)     |
-| About        | ![About](screenshots/about.png)       |
+| Home         | ![Home](screenshots/home.jpg)         |
+| Detail Resep | ![Detail](screenshots/detail.jpg)     |
+| Favorit      | ![Favorit](screenshots/favorites.jpg) |
+| Search       | ![Search](screenshots/search.jpg)     |
+| About        | ![About](screenshots/about.jpg)       |
 
 ## Video Demo
 
-> [Tonton Video Demo di YouTube](https://youtube.com/...)
+> [Tonton Video Demo di YouTube](https://www.youtube.com/watch?v=Odr1BZIBJes)
 
 ## State Management — Zustand
 
@@ -109,4 +109,10 @@ Untuk skala aplikasi UTS ini (hanya manage state favorit), Zustand adalah piliha
 
 ## Refleksi Pengerjaan
 
-> Refleksi pengerjaan akan ditulis setelah proses development selesai. Akan berisi kesulitan yang dihadapi, bug yang pernah muncul, dan apa yang dipelajari selama pengerjaan UTS ini. (minimal 150 kata)
+> Selama pengerjaan UTS ini, saya menghadapi beberapa kesulitan. Pertama, bottom navigation bar pada Android bertumpuk dengan tombol navigasi sistem (back, home, recent apps). Untuk mengatasinya, saya harus mempelajari penggunaan `useSafeAreaInsets()` dari `react-native-safe-area-context` agar padding bawah tab bar menyesuaikan secara dinamis berdasarkan perangkat.
+>
+> Kesulitan kedua adalah memahami perbedaan antara controlled dan uncontrolled component di React Native. Awalnya, TextInput pada halaman Search menggunakan `useRef` dan `defaultValue` (uncontrolled), yang ternyata tidak sesuai dengan syarat tugas. Saya harus melakukan refactor agar menggunakan `useState` dan prop `value` (controlled component).
+>
+> Selain itu, project awal Expo menghasilkan banyak file template bawaan seperti `explore.tsx`, `hello-wave.tsx`, dan `parallax-scroll-view.tsx` yang tidak relevan dengan proyek ResepKita. Proses identifikasi dan pembersihan file-file ini membutuhkan ketelitian agar tidak menghapus file yang masih digunakan.
+>
+> Dari sisi state management, ini pertama kalinya saya menggunakan Zustand. Awalnya agak bingung dengan pattern `create()`, `set()`, dan `get()`, tetapi setelah memahami konsepnya, Zustand terasa jauh lebih sederhana dibandingkan Redux.
